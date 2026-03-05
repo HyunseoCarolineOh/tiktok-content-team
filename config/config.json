@@ -1,0 +1,90 @@
+{
+  "_comment": "API 키는 환경변수로 관리. 이 파일에 직접 입력하지 마세요.",
+
+  "anthropic": {
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "model": "claude-opus-4-6",
+    "thinking": {
+      "type": "adaptive",
+      "budget_tokens": 8000
+    }
+  },
+
+  "tiktok": {
+    "client_key_env": "TIKTOK_CLIENT_KEY",
+    "client_secret_env": "TIKTOK_CLIENT_SECRET",
+    "redirect_uri": "http://localhost:8080/callback",
+    "scopes": [
+      "video.upload",
+      "video.publish",
+      "research.data.basic"
+    ],
+    "api_base_url": "https://open.tiktokapis.com/v2"
+  },
+
+  "pipeline": {
+    "output_base_dir": "outputs",
+    "scripts_dir": "scripts",
+    "metadata_dir": "metadata",
+    "subtitles_dir": "subtitles",
+    "final_dir": "final",
+    "broll_dir": "broll",
+    "raw_dir": "raw",
+
+    "weekly_video_count": 5,
+    "script_duration_seconds": 60,
+
+    "encoding": "utf-8"
+  },
+
+  "editing": {
+    "whisper": {
+      "model": "medium",
+      "language": "ko",
+      "device": "cuda"
+    },
+    "ffmpeg": {
+      "subtitle_font": "Malgun Gothic",
+      "subtitle_size": 28,
+      "subtitle_color": "white",
+      "subtitle_outline_color": "black",
+      "subtitle_outline_width": 2,
+      "subtitle_margin_v": 150,
+      "speed_factor": 1.1,
+      "silence_threshold_db": -50,
+      "silence_min_duration": 0.5,
+      "vocal_volume": 0.7,
+      "bgm_volume": 0.1
+    },
+    "thumbnail": {
+      "width": 1080,
+      "height": 1920,
+      "font": "Malgun Gothic",
+      "font_size": 80,
+      "text_color": "white",
+      "shadow_color": "black",
+      "shadow_offset": 3
+    }
+  },
+
+  "research": {
+    "sources": [
+      "한국경제",
+      "매일경제",
+      "techcrunch.com",
+      "hbr.org"
+    ],
+    "topics_per_week": 15,
+    "min_score_threshold": 20
+  },
+
+  "schedule": {
+    "optimal_post_times": [
+      "07:00",
+      "12:00",
+      "19:00",
+      "21:00"
+    ],
+    "timezone": "Asia/Seoul"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "channel": {
+    "name": "비즈니스 인사이트",
+    "tagline": "실전 비즈니스 인사이트, 60초에 담다",
+    "description": "창업, 스타트업, 비즈니스 전략을 쉽고 빠르게"
+  },
+
+  "target_audience": {
+    "age_range": "20-35",
+    "interests": ["창업", "스타트업", "커리어", "비즈니스", "재테크"],
+    "pain_points": [
+      "비즈니스 이론은 많은데 실전 적용법을 모름",
+      "해외 사례는 있는데 한국 맥락이 없음",
+      "시간이 없어서 긴 콘텐츠를 못 봄"
+    ]
+  },
+
+  "tone_of_voice": {
+    "primary": "전문적이지만 친근하게",
+    "secondary": "직설적이고 핵심만",
+    "avoid": ["지나치게 학문적", "딱딱한 문어체", "모호한 표현"],
+    "examples": {
+      "good": "이 한 가지만 바꿔도 매출이 달라집니다",
+      "bad": "본 컨텐츠에서는 비즈니스 전략의 핵심 요소를 살펴보겠습니다"
+    }
+  },
+
+  "content_style": {
+    "hook_style": "충격적 통계 또는 반전 진술",
+    "structure": "문제 제기 → 핵심 3포인트 → 실전 적용 → CTA",
+    "cta_style": "댓글로 의견 묻기 또는 저장 유도"
+  },
+
+  "visual_style": {
+    "color_palette": {
+      "primary": "#1A1A2E",
+      "secondary": "#16213E",
+      "accent": "#0F3460",
+      "highlight": "#E94560",
+      "text": "#FFFFFF"
+    },
+    "font": {
+      "primary": "맑은고딕",
+      "weight": "Bold",
+      "subtitle_size": 28,
+      "thumbnail_size": 80
+    },
+    "thumbnail_style": "미니멀 + 강렬한 제목 텍스트"
+  },
+
+  "hashtag_strategy": {
+    "must_include": ["#비즈니스", "#창업", "#스타트업", "#직장인"],
+    "rotate": ["#마케팅", "#경영전략", "#사업아이디어", "#성공법칙", "#부자되는법"],
+    "trending_check": true,
+    "max_count": 30
+  },
+
+  "forbidden_content": {
+    "topics": ["정치적 논란", "특정 인물 비방", "미검증 투자 조언"],
+    "words": ["반드시", "확실히", "100%", "무조건"],
+    "claims": ["수익 보장", "성공 보장", "손실 없는 투자"]
+  },
+
+  "cta_templates": [
+    "이런 비즈니스 인사이트 더 보고 싶으면 팔로우!",
+    "여러분은 어떻게 생각하세요? 댓글로 알려주세요",
+    "저장해두고 나중에 써보세요",
+    "이 영상이 도움됐다면 좋아요 한 번만요"
+  ],
+
+  "growth_category": {
+    "enabled": true,
+    "label": "개인성장",
+    "tone_override": "솔직한 1인칭 경험담 + 실용적 인사이트",
+    "hook_style": "개인 경험 고백형 → 보편적 통찰로 확장",
+    "hashtags_additional": ["#자기계발", "#성장일기", "#루틴", "#습관", "#갓생"],
+    "content_mix_quota": 1
+  }
+}
