@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Play, RefreshCw } from 'lucide-react'
+import { Play, RefreshCw, AlertTriangle } from 'lucide-react'
 import LogConsole from '../components/LogConsole'
 import VideoUploader from '../components/VideoUploader'
 import { runPipelineStep } from '../api/client'
 import { useWebSocket } from '../hooks/useWebSocket'
+
+const isLocalEnv = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
 
 const STEPS = [
   { id: '1', label: '01 리서치', desc: '트렌드 수집 + 주제 풀 생성', color: 'bg-blue-600 hover:bg-blue-700' },
@@ -44,6 +46,19 @@ export default function PipelineControl() {
         <p className="text-gray-400 mt-1 text-sm">6단계 콘텐츠 파이프라인을 순서대로 실행하세요.</p>
       </div>
 
+      {!isLocalEnv && (
+        <div className="flex items-start gap-3 bg-yellow-900/30 border border-yellow-700 rounded-lg p-4">
+          <AlertTriangle size={18} className="text-yellow-400 mt-0.5 shrink-0" />
+          <div>
+            <p className="text-yellow-300 font-semibold text-sm">파이프라인은 로컬 환경에서만 실행 가능합니다</p>
+            <p className="text-yellow-400/80 text-xs mt-1">
+              Vercel 서버리스는 장기 실행 프로세스와 WebSocket을 지원하지 않습니다.
+              로컬에서 <code className="bg-black/30 px-1 rounded">python -X utf8 pipeline/01_research.py</code> 로 직접 실행하세요.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* 날짜 선택 */}
       <div className="flex items-center gap-3">
         <label className="text-sm text-gray-400">실행 날짜</label>
@@ -59,7 +74,7 @@ export default function PipelineControl() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {STEPS.map((step) => {
           const isRunning = runningStep === step.id
-          const disabled = runningStep !== null && !isRunning
+          const disabled = !isLocalEnv || (runningStep !== null && !isRunning)
           return (
             <button
               key={step.id}
